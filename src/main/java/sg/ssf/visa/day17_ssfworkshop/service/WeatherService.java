@@ -1,5 +1,9 @@
 package sg.ssf.visa.day17_ssfworkshop.service;
 
+import java.io.IOException;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
