@@ -1,5 +1,6 @@
 package sg.ssf.visa.day17_ssfworkshop.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -7,7 +8,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class WeatherService {
     
-    private final String API_KEY = "6e3207bb3153ea7e5ebc65b3ed512c00";
+    @Value("${weather.api.key}")
+    private String API_KEY;
     private final String DEFAULT_CITY = "singapore";
 
     public void getWeather(String city){
