@@ -3,6 +3,7 @@ package sg.ssf.visa.day17_ssfworkshop.service;
 import java.io.IOException;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -13,7 +14,8 @@ import sg.ssf.visa.day17_ssfworkshop.model.WeatherStatus;
 @Service
 public class WeatherService {
     
-    private final String API_KEY = "6e3207bb3153ea7e5ebc65b3ed512c00";
+    @Value("${weather.api.key}")
+    private String API_KEY;
     private final String DEFAULT_CITY = "singapore";
     private final String API_URL = "https://api.openweathermap.org/data/2.5/weather";
 
