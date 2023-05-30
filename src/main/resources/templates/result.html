@@ -7,7 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Result</title>
 </head>
-<body>
+<body th:object="${weather}">
+    <div class="container">
+        <img th:src="*{icon}" alt="">
+        <br>
+        City:
+        <p th:text="*{city}"></p>
+        <br>
+        Weather:
+        <p th:text="*{main}"></p>
+        <br>
+        Description:
+        <p th:text="*{description}"></p>
+        <br>
+        Temperature:
+        <p th:text="|*{temp} &#8451;|"></p>
+        <br>
+        Sunrise Date time:
+        <p th:text="*{#temporals.format(sunrise, 'dd-MM-yyyy HH:mm')}"></p>
+        <br>
+        Sunset Date time:
+        <p th:text="*{#temporals.format(sunset, 'dd-MM-yyyy HH:mm')}"></p>
+        <br>
+        Weather Date time:
+        <p th:text="*{#temporals.format(recordedTime, 'dd-MM-yyyy HH:mm')}"></p>
+    </div>
     <a href="../static/index.html">Request weather for another city</a>
 </body>
 </html>
